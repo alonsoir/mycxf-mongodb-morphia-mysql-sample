@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.aironman.sample.mongo.repository.RepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.173 sec

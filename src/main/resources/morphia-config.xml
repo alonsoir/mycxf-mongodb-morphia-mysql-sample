@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:property-placeholder location="classpath:db-${my.env}.properties"/>-->
+    <!--<bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" />-->
+	<context:property-placeholder location="classpath:db.properties" />
+
+    <!-- setup Mongo and Morphia -->
+    <bean name="morphiaFactory" class="com.aironman.sample.utils.MorphiaFactory">
+        <property name="host" value="${mongo.host.name}"/>
+        <property name="port" value="${mongo.host.port}"/>
+    </bean>
+    <bean name="mongo" factory-bean="morphiaFactory" factory-method="getMongoInstance"/>
+    <bean name="morphia" factory-bean="morphiaFactory" factory-method="getMorphiaInstance"/>
+
+    <bean id="employeeDao" class="com.aironman.sample.dao.EmployeeDaoMorphiaImpl">
+        <constructor-arg name="mongo" ref="mongo"/>
+        <constructor-arg name="morphia" ref="morphia"/>
+        <constructor-arg name="dbName" value="${mongo.db.name}"/>
+    </bean>
+</beans>

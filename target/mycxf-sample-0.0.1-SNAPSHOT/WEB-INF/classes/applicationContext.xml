@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<import resource="./ApplicationContext-mongo.xml"/>
+ 	<import resource="./ApplicationContext-dao.xml"/>
+ 	<import resource="./ApplicationContext-security.xml"/>
+ 	<import resource="./ApplicationContext-si-jpa-cxf.xml"/>
+ 	<import resource="./ApplicationContext-si-mongo-cxf.xml"/>
+    <!-- Scan for spring annotated components -->
+    <context:component-scan base-package="com.aironman.sample"/>
+
+    <!-- Process annotations on registered beans like @Autowired... -->
+    <context:annotation-config/>
+
+</beans>

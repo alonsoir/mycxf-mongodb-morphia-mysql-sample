@@ -1,0 +1,27 @@
+The idea behind of this project is to provide a clean implementation for a secured web service connected using REST architecture style with 
+command pattern and composite command pattern, to a mongodb instance and a mysql instance too, best of both worlds.
+
+The way to connect to a mongodb instance is using morphia or spring-data, both of them. There are differente examples using it.  
+
+https://github.com/mongodb/morphia
+
+http://projects.spring.io/spring-data-mongodb/
+
+first steps:
+check pom.xml file, there are some config data in order to configure the mysql instance, by default, the jpa database name is sample_cxf, the user 
+is root/root, the ip conection is localhost (127.0.0.1)
+create a database in mysql with the name of the database you choose and let to the root user the neccesary permits in order to create tables, fields,
+and so on.
+Necesary data for mongodb instace is located in db.properties, as well as jpa config.
+
+mvn clean package jetty:run in order to execute it and go to localhost:9090/services
+
+PD
+
+What do i must know about REST?
+
+If you want to create a non existent resource, you must use always POST, as i do in the example,if instead, you need to update something, you must always to use PUT,
+if you need to delete something, DELETE is the command and, finally, if you need to read the state, you must use GET.
+
+
+

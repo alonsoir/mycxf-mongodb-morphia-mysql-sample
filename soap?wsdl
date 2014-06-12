@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.springframework.org/schema/beans" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://ws.sample.aironman.com/" name="sampleSoapService" targetNamespace="http://www.springframework.org/schema/beans">
+  <wsdl:import location="http://localhost:8080/mycxf-sample-0.0.1-SNAPSHOT/services/soap?wsdl=SampleServiceSOAP.wsdl" namespace="http://ws.sample.aironman.com/">
+    </wsdl:import>
+  <wsdl:binding name="sampleSoapServiceSoapBinding" type="ns1:SampleServiceSOAP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="saveFrom">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="saveFrom">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveFromResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserException">
+        <soap:fault name="InvalidUserException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="sampleSoapService">
+    <wsdl:port binding="tns:sampleSoapServiceSoapBinding" name="$Proxy37Port">
+      <soap:address location="http://localhost:8080/mycxf-sample-0.0.1-SNAPSHOT/services/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

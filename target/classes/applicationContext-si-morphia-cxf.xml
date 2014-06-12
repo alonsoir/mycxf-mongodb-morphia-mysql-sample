@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:int="http://www.springframework.org/schema/integration"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+
+	<!-- mongodb integration some services uses spring-mongo support and other services uses morphia support-->
+	<int:gateway id="sampleServiceMorphiaRESTGateway"
+		service-interface="com.aironman.sample.ws.MorphiaSampleServiceREST"
+		default-request-channel="saveEmployeeFormChannelREST">
+		<int:method name="saveForm" request-channel="saveEmployeeFormChannelREST" />
+	</int:gateway>
+
+	<!-- wire soap with SI 
+	<int:gateway id="sampleServiceMongoSOAPGateway"
+		service-interface="com.aironman.sample.ws.MongoSampleServiceSOAP"
+		default-request-channel="saveMongoFormChannelSOAP">
+
+		<int:method name="saveForm" request-channel="saveMongoFormChannelSOAP" />
+	</int:gateway>
+	
+	<int:channel id="saveMongoFormChannelSOAP" />
+	-->
+	
+	<int:channel id="saveEmployeeFormChannelREST" />
+
+	<int:chain input-channel="saveEmployeeFormChannelREST">
+		<int:transformer ref="employeeTransformer" method="signupFormToEmployee" />
+		<int:service-activator ref="employeeService"
+			method="saveEmployee" />
+		<int:transformer ref="employeeTransformer" method="employeeToSignupForm" />
+	</int:chain>
+	
+	<!-- sampleService is defined within com.aironman.sample.service.SampleServiceImpl 
+	<int:chain input-channel="saveFormChannelSOAP">
+		<int:transformer ref="userTransformer" method="signupFormToUser" />
+		<int:service-activator ref="sampleService"
+			method="saveUser" />
+		<int:transformer ref="userTransformer" method="userToSignupForm" />
+	</int:chain>
+	-->
+
+
+</beans>
