@@ -23,5 +23,5 @@ What do i must know about REST?
 If you want to create a non existent resource, you must use always POST, as i do in the example,if instead, you need to update something, you must always to use PUT,
 if you need to delete something, DELETE is the command and, finally, if you need to read the state, you must use GET.
 
-
+the job is not finished!
 
