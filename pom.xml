@@ -19,7 +19,7 @@
 		<!-- morphia dependencies -->
 
 		<spring-security-crypto.version>5.1.3.RELEASE</spring-security-crypto.version>
-		<spring.version>5.1.4.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<spring.data.version>1.5.2.RELEASE</spring.data.version>
 		<spring-data-commons.version>2.1.4.RELEASE</spring-data-commons.version>
 		<spring-data-commons-core.version>1.4.1.RELEASE</spring-data-commons-core.version>
@@ -58,8 +58,8 @@
 		<mongo.host>127.0.0.1</mongo.host>
 		<mongo.port>27017</mongo.port>
 		<!-- not used -->
-		<mongo.user></mongo.user>
-		<mongo.pass></mongo.pass>
+		<mongo.user/>
+		<mongo.pass/>
 		<mongo.dbName>Employees</mongo.dbName>
 
 	</properties>
@@ -247,13 +247,13 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>4.0.1.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>4.0.1.RELEASE</version>
 		</dependency>
 
 		<dependency>
