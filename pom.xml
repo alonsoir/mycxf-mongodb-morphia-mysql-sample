@@ -58,8 +58,8 @@
 		<mongo.host>127.0.0.1</mongo.host>
 		<mongo.port>27017</mongo.port>
 		<!-- not used -->
-		<mongo.user></mongo.user>
-		<mongo.pass></mongo.pass>
+		<mongo.user/>
+		<mongo.pass/>
 		<mongo.dbName>Employees</mongo.dbName>
 
 	</properties>
@@ -247,13 +247,13 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>5.5.7</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>5.5.7</version>
 		</dependency>
 
 		<dependency>
