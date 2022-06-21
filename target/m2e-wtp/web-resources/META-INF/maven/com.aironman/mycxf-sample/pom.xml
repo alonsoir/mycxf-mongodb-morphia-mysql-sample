@@ -31,7 +31,7 @@
 		<validation-api.version>1.1.0.Final</validation-api.version>
 		<bonecp.version>0.7.1.RELEASE</bonecp.version>
 		<log4j.version>1.2.17</log4j.version>
-		<mysql-connector-java.version>5.1.30</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 		<!-- JDBC Setting -->
 		<hibernate.dialect>org.hibernate.dialect.MySQLInnoDBDialect</hibernate.dialect>
 		<hibernate.indexBase>target/indexes</hibernate.indexBase>
