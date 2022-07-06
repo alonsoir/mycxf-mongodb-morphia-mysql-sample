@@ -20,7 +20,7 @@
 
 		<spring-security-crypto.version>3.2.4.RELEASE</spring-security-crypto.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
-		<spring.data.version>1.5.2.RELEASE</spring.data.version>
+		<spring.data.version>1.11.23.RELEASE</spring.data.version>
 		<spring-data-commons.version>1.7.2.RELEASE</spring-data-commons.version>
 		<spring-data-commons-core.version>1.4.1.RELEASE</spring-data-commons-core.version>
 		<spring.integration.version>2.2.3.RELEASE</spring.integration.version>
