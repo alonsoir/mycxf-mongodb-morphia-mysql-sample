@@ -32,7 +32,7 @@
 		<javax.ws.rs-api.version>2.0-m10</javax.ws.rs-api.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<jackson.version>1.9.0</jackson.version>
-		<cxf.version>2.7.5</cxf.version>
+		<cxf.version>3.4.10</cxf.version>
 		<spring.data.mongodb.version>1.4.2.RELEASE</spring.data.mongodb.version>
 		<mongodb.driver.version>2.9.3</mongodb.driver.version>
 		<validation-api.version>1.1.0.Final</validation-api.version>
@@ -58,8 +58,8 @@
 		<mongo.host>127.0.0.1</mongo.host>
 		<mongo.port>27017</mongo.port>
 		<!-- not used -->
-		<mongo.user></mongo.user>
-		<mongo.pass></mongo.pass>
+		<mongo.user/>
+		<mongo.pass/>
 		<mongo.dbName>Employees</mongo.dbName>
 
 	</properties>
